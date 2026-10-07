@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS ZOO_ANIMAL(
+    animal_id INTEGER PRIMARY KEY,
+    name      TEXT    not null,
+    species   text    not null,
+    age_years INTEGER NOT NULL,
+    weight_kg REAL    not NULL
+);
+
+INSERT INTO ZOO_ANIMAL VALUES (1,'TIGER','BIG CAT',3, 220.0);
+INSERT INTO ZOO_ANIMAL VALUES (2,'LION','BIG CAT',5, 190.0);
+INSERT INTO ZOO_ANIMAL VALUES (3,'ELEPHANT','pachyderm',12, 4500.0);
+INSERT INTO ZOO_ANIMAL VALUES (4,'Giraffe','Ungulate',7, 800.0);
+INSERT INTO ZOO_ANIMAL VALUES (5,'penguin','bird',2, 190.0);
+INSERT INTO ZOO_ANIMAL VALUES (6,'PANDA','BEAR',4, 95.0);
+INSERT INTO ZOO_ANIMAL VALUES (7,'cheetah','Big CAT',4, 55.0);
+
+SELECT * FROM ZOO_ANIMAL;
+
+SELECT species FROM ZOO_ANIMAL;
+
+SELECT DISTINCT species FROM ZOO_ANIMAL;
+
+SELECT COUNT(DISTINCT species)AS UNIQUE_SPECIES FROM ZOO_ANIMAL;
+
+SELECT COUNT(animal_id) AS TOTAL_ANIMALS FROM ZOO_ANIMAL
+
+SELECT COUNT(animal_id) AS OLDER_THAN_5 FROM ZOO_ANIMAL WHERE age_years > 5;
+
+SELECT SUM(weight_kg) AS total_weight_kg FROM ZOO_ANIMAL;
+
+SELECT AVG(age_years) AS avg_age_years FROM ZOO_ANIMAL;
+
+SELECT
+    COUNT(animal_id)    AS TOTAL_ANIMALS,
+    COUNT(DISTINCT species)AS UNIQUE_SPECIES,
+    SUM(weight_kg)      AS total_weight_kg,
+    AVG(age_years)      AS avg_age_years
+FROM ZOO_ANIMAL;

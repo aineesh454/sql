@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS STUDENT (
+    sid INTEGER PRIMARY KEY AUTOINCREMENT,
+    sname  VARCHAR(50) UNIQUE NOT NULL,
+    sphone VARCHAR(100) NOT NULL,
+    saddress VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO STUDENT (sname, sphone, saddress) VALUES
+('John Doe', '123-456-7890', '123 Main St'),
+('Jane Smith', '987-654-3210', '456 Elm St');
+
+select * from STUDENT;
